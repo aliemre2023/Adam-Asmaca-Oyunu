@@ -109,7 +109,7 @@ while True:
     sorgu = input("\nHarf Deneme: h\nCevap Deneme: c\n -- ")
     print()
 
-    if sorgu == "h" and deneme_hakki != 0:
+    if sorgu == "h":
 
         harf = input("bir harf giriniz:")
         harf_deneme_listesi.append(harf)
@@ -130,22 +130,17 @@ while True:
         print(cikti_listesi,"\n")
         cikti_listesi = []
     
-    elif sorgu == "c" or deneme_hakki == 0:
+    elif sorgu == "c":
         tahmin = input("Kelimeyi tahmin edin:")
 
         if tahmin == kelime:
             print("Tebrikler. Kelimeyi doğru bildiniz.")
+            break
         
         else:
             deneme_hakki -= 1
             print("Maalesef, tahmininiz yanlış.\nKalan tahmin hakkınız:",deneme_hakki)
 
-            if deneme_hakki == 0:
-                print("Oyunu kaybettiniz. :/")
-            else:
-                continue
-    
-    
     if deneme_hakki == 5:
         print(bes)
         bes = " "
